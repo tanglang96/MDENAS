@@ -4,7 +4,11 @@ Here we propose a method to **extremely accelerate** NAS, **without reinforcemen
 
 Our paper is available at [《Multinomial Distribution Learning for Effective Neural Architecture Search》](https://arxiv.org/abs/1905.07529)
 
+
+
 ![](figs/1.png)
+
+
 
 Here we provide our test codes and pretrained models, our code is based on [DARTS](<https://github.com/khanrc/pt.darts>) and [ProxylessNAS](<https://github.com/mit-han-lab/ProxylessNAS>), pretrained models can be downloaded [here](https://drive.google.com/open?id=1W0UqwAnm37uibTuPDrH5Mt8PKNvFdD3v)
 
