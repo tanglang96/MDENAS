@@ -34,7 +34,6 @@ if __name__ == '__main__':
     np.random.seed(args.manual_seed)
     os.makedirs(args.path, exist_ok=True)
 
-    run_config_path = '%s/run.config' % args.path
     run_config = ImagenetRunConfig(
         **args.__dict__
     )
@@ -43,12 +42,12 @@ if __name__ == '__main__':
         if args.dataset == 'imagenet':
             from models.darts_nets_imagenet.augment_cnn import AugmentCNNImageNet
 
-            net = AugmentCNNImageNet(num_classes=run_config.data_provider.n_classes, genotype=from_str(args.darts_gene),
+            net = AugmentCNNImageNet(num_classes=run_config.data_provider.n_classes, genotype=eval(args.darts_gene),
                                      drop_out=args.dropout)
         elif args.dataset == 'cifar10':
             from models.darts_nets_cifar.augment_cnn import AugmentCNN
 
-            net = AugmentCNN(n_classes=run_config.data_provider.n_classes, genotype=from_str(args.darts_gene),
+            net = AugmentCNN(n_classes=run_config.data_provider.n_classes, genotype=eval(args.darts_gene),
                              drop_out=args.dropout)
     else:
         from models.normal_nets.proxyless_nets import proxyless_network
@@ -62,7 +61,6 @@ if __name__ == '__main__':
     # build run manager
     run_manager = RunManager(args.path, net, run_config)
 
-    init_path = '%s/init' % args.path
     run_manager.load_model()
     output_dict = {}
 

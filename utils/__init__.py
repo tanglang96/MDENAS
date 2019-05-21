@@ -1,8 +1,10 @@
 from .my_modules import *
 from .pytorch_utils import *
 from .get_data_iter import *
-from .genotypes import *
 from .preproc import *
+from collections import namedtuple
+
+Genotype = namedtuple('Genotype', 'normal normal_concat reduce reduce_concat')
 
 
 def make_divisible(v, divisor, min_val=None):

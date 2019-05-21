@@ -1,10 +1,12 @@
 # Multinomial Distribution Learning for Effective Neural Architecture Search
 
-Here we propose a method to extremely accelerate NAS, **without reinforcement learning or gradient**, just by sampling architectures from a distribution and comparing these architectures, Iteratively updating parameters of distribution while training
+Here we propose a method to **extremely accelerate** NAS, **without reinforcement learning or gradient**, just by sampling architectures from a distribution and comparing these architectures, estimating their **relative performance** rather than absolute performance, iteratively updating parameters of the distribution while training.
 
 ![](figs/1.png)
 
-Here we provide our test codes and pretrained model, our code is based on [DARTS](<https://github.com/khanrc/pt.darts>) and [ProxylessNAS](<https://github.com/mit-han-lab/ProxylessNAS>), pretrained models can be downloaded [here](https://drive.google.com/open?id=1W0UqwAnm37uibTuPDrH5Mt8PKNvFdD3v)
+Here we provide our test codes and pretrained models, our code is based on [DARTS](<https://github.com/khanrc/pt.darts>) and [ProxylessNAS](<https://github.com/mit-han-lab/ProxylessNAS>), pretrained models can be downloaded [here](https://drive.google.com/open?id=1W0UqwAnm37uibTuPDrH5Mt8PKNvFdD3v)
+
+**Search codes** will be released by [Sherwood](https://github.com/zhengxiawu) later !
 
 ## Requirements
 
@@ -13,7 +15,7 @@ Here we provide our test codes and pretrained model, our code is based on [DARTS
 
 ## Evaluate
 
-You need to modified your path to dataset in ``` data_providers/cifar10.py``` and ```data_providers/imagenet.py```
+You need to modified your path to dataset in ``` data_providers/cifar10.py``` and ```data_providers/imagenet.py```，```config.sh``` is used to prepare your environment, you should **write this file by yourself** and here we use it to prepare dataset and packages
 
 To evaluate the model in **DARTS setting**, just run
 

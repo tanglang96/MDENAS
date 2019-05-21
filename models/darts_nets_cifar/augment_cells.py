@@ -1,8 +1,8 @@
 """ CNN cell for network augmentation """
 import torch
 import torch.nn as nn
-from models.darts_nets_cifar import ops
 from utils import *
+from models.darts_nets_cifar import ops
 
 def to_dag(C_in, gene, reduction):
     """ generate discrete ops from gene """

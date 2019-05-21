@@ -6,7 +6,6 @@ import time
 from utils import *
 import apex
 
-
 class RunConfig:
     def __init__(self, dataset, test_batch_size, local_rank, world_size):
 
@@ -72,8 +71,7 @@ class RunManager:
         self._logs_path, self._save_path = None, None
         self.best_acc = 0
         self.start_epoch = 0
-        self.net = nn.DataParallel(self.net).cuda()
-        # self.net.module.to(self.device)
+        self.net = apex.parallel.convert_syncbn_model(nn.DataParallel(self.net)).cuda()
         self.print_net_info()
         self.criterion = nn.CrossEntropyLoss()
         cudnn.benchmark = True

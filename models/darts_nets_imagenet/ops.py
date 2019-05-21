@@ -186,24 +186,4 @@ class FactorizedReduce(nn.Module):
         return out
 
 
-class MixedOp(nn.Module):
-    """ Mixed operation """
 
-    def __init__(self, C, stride):
-        super().__init__()
-        self._ops = nn.ModuleList()
-        for primitive in PRIMITIVES:
-            # 利用索引来使用函数可以使用字典，键值分别为索引和lambda表达式
-            op = OPS[primitive](C, stride, affine=False)
-            self._ops.append(op)
-
-    def forward(self, x, weights):
-        """
-        Args:
-            x: input
-            weights: weight for each operation
-        """
-        return sum(w * op(x) for w, op in zip(weights, self._ops))
-        # index = torch.multinomial(weights, 1)
-        # sum = self._ops[index](x)
-        # return sum
