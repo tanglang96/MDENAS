@@ -6,7 +6,7 @@ Our paper is available at [《Multinomial Distribution Learning for Effective Ne
 
 
 
-![](figs/1.png)
+![](https://github.com/tanglang96/MDENAS/blob/master/figs/1.PNG)
 
 
 
