@@ -12,8 +12,6 @@ Our paper is available at [《Multinomial Distribution Learning for Effective Ne
 
 Here we provide our test codes and pretrained models, our code is based on [DARTS](<https://github.com/khanrc/pt.darts>) and [ProxylessNAS](<https://github.com/mit-han-lab/ProxylessNAS>), pretrained models can be downloaded [here](https://drive.google.com/open?id=1W0UqwAnm37uibTuPDrH5Mt8PKNvFdD3v)
 
-**Search codes** will be released by [Sherwood](https://github.com/zhengxiawu) later !
-
 ## Requirements
 
 - PyTorch 1.0
